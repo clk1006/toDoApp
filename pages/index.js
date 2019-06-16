@@ -56,7 +56,7 @@ const IndexPage = () => {
 							{items[index][1] || (
 								<input
 									style={{
-										color: "rgb(212, 175, 55)",
+										background: 'lightgrey',
 										borderWidth: '0',
 										fontSize: '20px',
 										margin: '0',
@@ -72,9 +72,10 @@ const IndexPage = () => {
 							{items[index][1] && (
 								<input
 									style={{
+										background: 'lightgrey',
 										borderWidth: '0',
 										fontStyle: 'italic',
-										color: 'lightgrey',
+										color: 'grey',
 										textDecoration: 'line-through',
 										fontSize: '20px',
 										margin: '0',
@@ -87,6 +88,7 @@ const IndexPage = () => {
 									disabled
 								/>
 							)}
+
 							<img
 								className="Delete"
 								src="Delete.png"
@@ -123,35 +125,39 @@ const IndexPage = () => {
 					height: 7vh;
 					width: 30vw;
 					display: flex;
-					
 				}
 				#inputField {
 					height: 100%;
 					width: 65%;
 					font-size: 18px;
 					color: rgb(212, 175, 55);
+					background: lightgrey;
+					border-width: 1;
 				}
 				#submit {
 					height: 110%;
 					width: 35%;
 					font-size: 19px;
-					color: rgb(212, 175, 55);
 				}
 				.list {
 					width: 30vw;
 					height: 50vh;
 					display: flex;
 					flex-direction: column;
-					alig-items: center;
+					align-items: center;
+					margin-top: 5px;
+					border-width: 5px;
+					border-color: rgb(212, 175, 55);
 				}
 				.item {
 					width: 100%;
 					padding: 0;
 					height: 5vh;
-					background: white;
+					background: lightgrey;
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					margin-top:10px;
 				}
 				.Delete {
 					margin-right: 0;
