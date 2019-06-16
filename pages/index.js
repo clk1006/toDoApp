@@ -1,4 +1,5 @@
 import React from 'react';
+import Todos from "../todos.json";
 let items = [];
 const IndexPage = () => {
 	const [ name, setName ] = React.useState('');
