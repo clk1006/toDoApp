@@ -56,6 +56,7 @@ const IndexPage = () => {
 							{items[index][1] || (
 								<input
 									style={{
+										color: "rgb(212, 175, 55)",
 										borderWidth: '0',
 										fontSize: '20px',
 										margin: '0',
@@ -122,16 +123,19 @@ const IndexPage = () => {
 					height: 7vh;
 					width: 30vw;
 					display: flex;
+					
 				}
 				#inputField {
 					height: 100%;
 					width: 65%;
 					font-size: 18px;
+					color: rgb(212, 175, 55);
 				}
 				#submit {
 					height: 110%;
 					width: 35%;
-					fot-size: 19px;
+					font-size: 19px;
+					color: rgb(212, 175, 55);
 				}
 				.list {
 					width: 30vw;
