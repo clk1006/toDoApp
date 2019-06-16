@@ -37,13 +37,20 @@ const IndexPage = () => {
 						<div className="item">
 							<input
 								type="checkbox"
+								style={{ height: "5vh", width: "5vh", msTransform: "scale(2)", 
+mozTransform: "scale(2)", 
+webkitTransform: "scale(2)",
+oTransform: "scale(2)",
+transform: "scale(2)"}}
 								checked={items[index][1]}
 								onChange={() => {
 									items[index][1] = !items[index][1];
 									setLoad(!load);
 								}}
 							/>
-							<input className="Name" type="text" value={items[index][0]} disabled />
+
+							{items[index][1]||<input style={{fontSize:"20px",margin:"0",height:"100%",width:"80%"}}className="Name" type="text" value={items[index][0]} disabled />}
+							{items[index][1] && <input style={{color:"grey",textDecoration:"line-through", fontSize: "20px", margin: "0", height: "100%", width: "80%" }} className="Name" type="text" value={items[index][0]} disabled />}
 							<img
 								className="Delete"
 								src="../assets/Delete.png"
@@ -99,20 +106,17 @@ const IndexPage = () => {
 					alig-items: center;
 				}
 				.item {
-					margin-top:5px;
 					width: 100%;
+					padding:0;
 					height: 5vh;
 					background: white;
+					display:flex;
+					align-items:center;
 				}
 				.Delete {
 					margin-right: 0;
 					height: 5vh;
 					width: 5vh;
-				}
-				.name {
-					height: 0px;
-					width: 60%;
-
 				}
 			`}</style>
 		</div>
