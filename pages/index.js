@@ -10,6 +10,7 @@ const IndexPage = () => {
 			<h1>ToDo</h1>
 			<div className="input">
 				<input
+					autoFocus
 					type="text"
 					id="inputField"
 					value={name}
@@ -30,10 +31,6 @@ const IndexPage = () => {
 				</button>
 			</div>
 			<div className="list">
-				{(() => {
-					console.log(items);
-					console.log('t');
-				})()}
 				{items.map((x, index) => {
 					return (
 						<div className="item">
@@ -93,7 +90,7 @@ const IndexPage = () => {
 
 							<img
 								className="Delete"
-								src="./Delete.png"
+								src="../assets/Delete.png"
 								onClick={() => {
 									items.splice(index, 1);
 									setLoad(!load);
@@ -132,7 +129,7 @@ const IndexPage = () => {
 					height: 100%;
 					width: 65%;
 					font-size: 18px;
-					color: rgb(212, 175, 55);
+					color: black;
 					background: lightgrey;
 					border-width: 1;
 				}
