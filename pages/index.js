@@ -1,6 +1,7 @@
 import React from 'react';
-import Todos from "../todos.json";
-let items = [];
+import Todos from '../todos.json';
+import axios from 'axios';
+let items = todos.todos;
 const IndexPage = () => {
 	const [ name, setName ] = React.useState('');
 	const [ load, setLoad ] = React.useState(true);
@@ -158,7 +159,7 @@ const IndexPage = () => {
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					margin-top:10px;
+					margin-top: 10px;
 				}
 				.Delete {
 					margin-right: 0;
