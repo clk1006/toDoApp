@@ -37,11 +37,15 @@ const IndexPage = () => {
 						<div className="item">
 							<input
 								type="checkbox"
-								style={{ height: "5vh", width: "5vh", msTransform: "scale(2)", 
-mozTransform: "scale(2)", 
-webkitTransform: "scale(2)",
-oTransform: "scale(2)",
-transform: "scale(2)"}}
+								style={{
+									marginRight: '3%',
+									padding: 0,
+									msTransform: 'scale(2)',
+									mozTransform: 'scale(2)',
+									webkitTransform: 'scale(2)',
+									oTransform: 'scale(2)',
+									transform: 'scale(2)'
+								}}
 								checked={items[index][1]}
 								onChange={() => {
 									items[index][1] = !items[index][1];
@@ -49,11 +53,42 @@ transform: "scale(2)"}}
 								}}
 							/>
 
-							{items[index][1]||<input style={{fontSize:"20px",margin:"0",height:"100%",width:"80%"}}className="Name" type="text" value={items[index][0]} disabled />}
-							{items[index][1] && <input style={{color:"grey",textDecoration:"line-through", fontSize: "20px", margin: "0", height: "100%", width: "80%" }} className="Name" type="text" value={items[index][0]} disabled />}
+							{items[index][1] || (
+								<input
+									style={{
+										borderWidth: '0',
+										fontSize: '20px',
+										margin: '0',
+										height: '85%',
+										width: '80%'
+									}}
+									className="Name"
+									type="text"
+									value={items[index][0]}
+									disabled
+								/>
+							)}
+							{items[index][1] && (
+								<input
+									style={{
+										borderWidth: '0',
+										fontStyle: 'italic',
+										color: 'lightgrey',
+										textDecoration: 'line-through',
+										fontSize: '20px',
+										margin: '0',
+										height: '85%',
+										width: '80%'
+									}}
+									className="Name"
+									type="text"
+									value={items[index][0]}
+									disabled
+								/>
+							)}
 							<img
 								className="Delete"
-								src="../assets/Delete.png"
+								src="Delete.png"
 								onClick={() => {
 									items.splice(index, 1);
 									setLoad(!load);
@@ -107,11 +142,12 @@ transform: "scale(2)"}}
 				}
 				.item {
 					width: 100%;
-					padding:0;
+					padding: 0;
 					height: 5vh;
 					background: white;
-					display:flex;
-					align-items:center;
+					display: flex;
+					align-items: center;
+					justify-content: center;
 				}
 				.Delete {
 					margin-right: 0;
