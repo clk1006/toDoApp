@@ -1,7 +1,8 @@
 import React from 'react';
+let items = [];
 const IndexPage = () => {
-	const [ items, setItems ] = React.useState([]);
 	const [ name, setName ] = React.useState('');
+	const [ load, setLoad ] = React.useState(true);
 	return (
 		<div className="root">
 			<h1>ToDo</h1>
@@ -18,15 +19,19 @@ const IndexPage = () => {
 				<button
 					id="submit"
 					onClick={() => {
-						let newItems = items.push([ name, false ]);
-						setItems(newItems);
+						items.push([ name, false ]);
 						setName('');
+						setLoad(!load);
 					}}
 				>
 					Submit
 				</button>
 			</div>
 			<div className="list">
+				{(() => {
+					console.log(items);
+					console.log('t');
+				})()}
 				{items.map((x, index) => {
 					return (
 						<div className="item">
@@ -34,18 +39,17 @@ const IndexPage = () => {
 								type="checkbox"
 								checked={items[index][1]}
 								onChange={() => {
-									let newItems = items;
-									newItems[index][1] = !newItems[index][1];
-									setItems(newItems);
+									items[index][1] = !items[index][1];
+									setLoad(!load);
 								}}
 							/>
-							<label value={items[index][0]} />
-							<button
-								value="Delete"
+							<input className="Name" type="text" value={items[index][0]} disabled />
+							<img
+								className="Delete"
+								src="../assets/Delete.png"
 								onClick={() => {
-									let newItems = items;
-									newItems.splice(index, 1);
-									setItems(newItems);
+									items.splice(index, 1);
+									setLoad(!load);
 								}}
 							/>
 						</div>
@@ -95,8 +99,20 @@ const IndexPage = () => {
 					alig-items: center;
 				}
 				.item {
+					margin-top:5px;
 					width: 100%;
 					height: 5vh;
+					background: white;
+				}
+				.Delete {
+					margin-right: 0;
+					height: 5vh;
+					width: 5vh;
+				}
+				.name {
+					height: 0px;
+					width: 60%;
+
 				}
 			`}</style>
 		</div>
