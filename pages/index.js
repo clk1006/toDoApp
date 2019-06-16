@@ -1,5 +1,5 @@
 import React from 'react';
-import Todos from '../todos.json';
+import todos from '../todos.json';
 import axios from 'axios';
 let items = todos.todos;
 const IndexPage = () => {
@@ -93,7 +93,7 @@ const IndexPage = () => {
 
 							<img
 								className="Delete"
-								src="Delete.png"
+								src="./Delete.png"
 								onClick={() => {
 									items.splice(index, 1);
 									setLoad(!load);

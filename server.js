@@ -8,10 +8,8 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 app.prepare().then(() => {
 	const server = express();
-	server.get('delete', (req, res) => {
-        todos.todos.splice(req.number,1);
-        let toDos=toString(todos.todos);
-        fs.writeFile("todos.json","{'todos':"+toDos+"}")
+	server.get('/delete', (req, res) => {
+        res.json({"test":req});
 	});
 	server.get('*', (req, res) => {
 		return handle(req, res);
